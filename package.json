@@ -4,7 +4,7 @@
   "description": "Javascript binding for BoltDB database",
   "main": "bolt.js",
   "scripts": {
-    "install": "mkdirp build-go && go2nodebinding src/bolt.go bolt.h > build-go/bolt.cxx && go build -buildmode=c-archive -o build-go/bolt.a src/bolt.go && node-pre-gyp install --fallback-to-build",
+    "install": "mkdirp build-go && go2nodebinding bolt.go bolt.h > build-go/bolt.cxx && go build -buildmode=c-archive -o build-go/bolt.a bolt.go && node-pre-gyp install --fallback-to-build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "binary": {
