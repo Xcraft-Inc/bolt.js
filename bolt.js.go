@@ -1,6 +1,7 @@
 package main
 
 import (
+	"C"
 	"log"
 
 	"github.com/boltdb/bolt"
@@ -14,3 +15,5 @@ func Open() {
 	}
 	defer db.Close()
 }
+
+func main() {}
