@@ -4,7 +4,13 @@
   "description": "Javascript binding for BoltDB database",
   "main": "bolt.js",
   "scripts": {
+    "install": "mkdirp build-go && go2nodebinding src/bolt.go bolt.h > build-go/bolt.cxx && go build -buildmode=c-archive -o build-go/bolt.a src/bolt.go && node-pre-gyp install --fallback-to-build",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "binary": {
+    "module_name": "bolt",
+    "module_path": "./lib/binding/",
+    "host": "./bin"
   },
   "repository": {
     "type": "git",
@@ -15,5 +21,9 @@
   "bugs": {
     "url": "https://github.com/Xcraft-Inc/bolt.js/issues"
   },
-  "homepage": "https://github.com/Xcraft-Inc/bolt.js#readme"
+  "homepage": "https://github.com/Xcraft-Inc/bolt.js#readme",
+  "devDependencies": {
+    "mkdirp": "^0.5.1",
+    "node-pre-gyp": "^0.6.39"
+  }
 }
